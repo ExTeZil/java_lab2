@@ -77,16 +77,18 @@ public class Main {
         String str = "";
         String str1 = "";
         Scanner scanner = new Scanner(System.in);
-
         String text = "";
-
-        System.out.print("1.Ввести рядок " +
+        System.out.print("\n1.Ввести рядок " +
                 "\n2.Видалити всі слова, які містять хоча б одну латинську літеру" +
                 "\n3.видалити всі числа з тексту " +
-                "\n4.Вихід" +
+                "\n4.Зчитати масив цифр з файла " +
+                "\n5.Продублювати в ньому всі парні числа, які знаходяться на непарних місцях " +
+                "\n6.Зчитати текст з файла" +
+                "\n7.Підрахувати кількість речень, що містять непарну кількість слів та записати в файл" +
+                "\n8.Вихід"+
                 "\nВведіть число : ");
         int num = scanner.nextInt();
-        while (num != 999) {
+        while (num != 8) {
             switch (num) {
                 case 1:
                     try {
@@ -132,10 +134,10 @@ public class Main {
                     }
                     break;
                 case 5:
-                    List<Integer> numbers = new ArrayList<>();
-                    for (String number : str1.split(" ")) {
-                        numbers.add(Integer.parseInt(number));
-                    }
+                        List<Integer> numbers = new ArrayList<>();
+                        for (String number : str1.split(" ")) {
+                            numbers.add(Integer.parseInt(number));
+                        }
                     List<Integer> numbers2 = new LinkedList<>();
                     for (int i = 0; i < numbers.size(); i++) {
                         numbers2.add(numbers.get(i));
@@ -160,8 +162,6 @@ public class Main {
                         writer.flush();
                     }
                     catch(IOException ex) { System.out.println(ex.getMessage()); }
-
-
                     /*
                     int lese;
                     int killkist=0;
@@ -190,22 +190,21 @@ public class Main {
                     }
                     break;
                 case 7:
-                    int peso = 0;
                     task3(text);
-                    System.out.println(peso);
                     break;
                 default:
                     System.out.println("Не вірно введене число!Введіть ще раз :");
                     break;
             }
 
-
             System.out.print("\n1.Ввести рядок " +
                     "\n2.Видалити всі слова, які містять хоча б одну латинську літеру" +
                     "\n3.видалити всі числа з тексту " +
-                    "\n4.видалити всі числа з тексту " +
-                    "\n5.видалити всі числа з тексту " +
-                    "\n6.Вихід" +
+                    "\n4.Зчитати масив цифр з файла " +
+                    "\n5.Продублювати в ньому всі парні числа, які знаходяться на непарних місцях " +
+                    "\n6.Зчитати текст з файла" +
+                    "\n7.Підрахувати кількість речень, що містять непарну кількість слів та записати в файл" +
+                    "\n8.Вихід"+
                     "\nВведіть число : ");
             num = scanner.nextInt();
         }
